@@ -1,0 +1,36 @@
+@font-face {
+  font-family: NarkissBlockCondensedLight;
+  src: url(../public/fonts/NarkissBlockCondensed-Light.woff2);
+}
+
+@font-face {
+  font-family: NarkissBlockCondensedBold;
+  src: url(../public/fonts/NarkissBlockCondensed-Bold.woff2);
+}
+
+:root {
+  --main-background-color: #292c33;
+  --primary-nav-background-color: #22252a;
+  --secondary-nav-background-color: #343841;
+  --active-background-color: #2c4334;
+  --warning-background-color: #3f3831;
+  --error-background-color: #3a1f23;
+  --active-text-color: #67c799;
+  --warning-text-color: #c59965;
+  --error-text-color: #e2a4ab;
+  --primary-text-color: #cccccc;
+}
+
+* {
+  padding: 0;
+  margin: 0;
+  direction: ltr;
+  font-family: NarkissBlockCondensedLight;
+  color: var(--primary-text-color);
+}
+
+body {
+  background-color: #292c33;
+  width: 100vw;
+  height: 100vh;
+}
