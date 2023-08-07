@@ -1,0 +1,142 @@
+.header-container {
+  display: flex;
+  flex-direction: column;
+  align-items: flex-start;
+  width: 95vw;
+  padding: 2.5vw 5vw 2.5vw 0;
+  background-color: var(--primary-nav-background-color);
+  position: relative;
+}
+
+.hamburger-icon {
+  font-size: 8vw;
+  padding-left: 5vw;
+}
+
+.navigation-links-list {
+  display: none;
+  flex-direction: column;
+  padding: 10vw 15vw;
+  gap: 5vw;
+  background-color: var(--secondary-nav-background-color);
+  height: 100vh;
+  position: absolute;
+  top: 0;
+  list-style: none;
+  z-index: 1000;
+}
+
+.show-menu {
+  display: flex;
+  animation: open-smoothly 1s;
+}
+
+.navigation-list-item {
+  padding: 1vw 3vw;
+}
+
+.navigation-list-item a {
+  font-size: 10vw;
+  text-decoration: none;
+  /* color: var(--active-text-color); */
+}
+
+.navigation-backdrop {
+  display: none;
+  width: 100vw;
+  height: 100vh;
+  position: absolute;
+  top: 0;
+  right: 0;
+  z-index: 999;
+}
+
+.show-backdrop {
+  display: block;
+  background-color: #343841d4;
+}
+
+@media screen and (min-width: 768px) {
+  .navigation-links-list {
+    padding: 5vw 10vw;
+    gap: 2vw;
+  }
+
+  .navigation-list-item a {
+    font-size: 7vw;
+  }
+}
+
+@media screen and (min-width: 1024px) {
+  .header-container {
+    padding: 0;
+    height: 4.5vw;
+    width: 100vw;
+  }
+
+  .hamburger-icon {
+    display: none;
+  }
+
+  .navigation-links-list {
+    display: flex;
+    flex-direction: row;
+    height: 100%;
+    padding: 0;
+    position: initial;
+    background-color: unset;
+  }
+
+  .navigation-list-item {
+    padding: 1vw 1.5vw;
+    cursor: pointer;
+    position: relative;
+  }
+
+  .navigation-list-item:hover {
+    background-color: var(--secondary-nav-background-color);
+    transform: scale(0.9);
+    transition: transform 0.5s;
+  }
+
+  .navigation-list-item a {
+    font-size: 2vw;
+    position: relative;
+  }
+
+  /* Underline effect on the ::after pseudo-element of the <a> element */
+  .navigation-list-item a::after {
+    content: "";
+    height: 0.2rem;
+    width: 0;
+    background-color: #565a64;
+    position: absolute;
+    bottom: 0vw;
+    transition: width 0.5s;
+    left: 0;
+  }
+
+  /* Trigger the growing underline animation on hover */
+  .navigation-list-item:hover a::after {
+    animation: growing 1s forwards;
+  }
+}
+
+@keyframes open-smoothly {
+  0% {
+    transform: translateX(-100%);
+  }
+
+  100% {
+    transform: translateX(0);
+  }
+}
+
+@keyframes growing {
+  from {
+    width: 0;
+  }
+  to {
+    width: 100%;
+  }
+}

@@ -6,53 +6,13 @@ import emailImage from "./assets/icons/email.png";
 import githubImage from "./assets/icons/github.png";
 import linkedinImage from "./assets/icons/linkedin.png";
 import "./App.css";
+import Header from "./components/header/Header";
 
 function App() {
-  const [showMenu, setShowMenu] = useState(false);
-
-  const toggleMenu = () => {
-    setShowMenu((prev) => !prev);
-  };
-
   return (
     <>
       <main className="main-container">
-        <header className="header-container">
-          <div className="hamburger-icon" onClick={toggleMenu}>
-            ☰
-          </div>
-          <ul
-            className={`navigation-links-list ${showMenu ? "show-menu" : ""}`}
-          >
-            <li className="navigation-list-item">
-              <a
-                href="https://github.com/your-github-username"
-                target="_blank"
-                rel="noopener noreferrer"
-              >
-                About
-              </a>
-            </li>
-            <li className="navigation-list-item">
-              <a
-                href="https://github.com/your-github-username"
-                target="_blank"
-                rel="noopener noreferrer"
-              >
-                Projects
-              </a>
-            </li>
-            <li className="navigation-list-item">
-              <a
-                href="https://github.com/your-github-username"
-                target="_blank"
-                rel="noopener noreferrer"
-              >
-                Skills
-              </a>
-            </li>
-          </ul>
-        </header>
+        <Header />
         <section className="content-container">
           <div className="text-container">
             <h1 className="about-title">Arie Fishman</h1>
